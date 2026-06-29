@@ -1,0 +1,61 @@
+/* --- 1. Global Reset --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f6f9; color: #333; line-height: 1.6; }
+
+/* --- 2. Layout & Sidebar --- */
+#app { display: flex; min-height: 100vh; }
+.sidebar { width: 250px; background: #2c3e50; color: #ffffff; min-height: 100vh; padding: 20px; }
+.sidebar h4 { margin-bottom: 20px; font-size: 1.2rem; border-bottom: 1px solid #444; padding-bottom: 10px; }
+.nav-menu a { display: block; padding: 12px 15px; color: #bdc3c7; text-decoration: none; transition: all 0.3s ease; border-radius: 5px; margin-bottom: 5px; }
+.nav-menu a:hover { background: #34495e; color: #ffffff; }
+.router-link-exact-active { background: #007bff !important; color: #ffffff !important; }
+
+/* --- 3. Content Area (DASHBOARD) --- */
+/* Gunakan ini untuk halaman artikel/tabel, BUKAN untuk login */
+.main-content { flex: 1; padding: 30px; width: 100%; }
+
+/* --- 4. Login Page (KHUSUS LOGIN) --- */
+/* Gunakan class ini di file Login.js agar tidak merusak layout dashboard */
+/* Container khusus login yang memaksa posisi tengah */
+.login-page-container {
+    position: absolute;    /* Mengambil alih posisi */
+    top: 0;
+    left: 250px;           /* Sesuai lebar sidebar kamu */
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f6f9;
+    z-index: 100;
+}
+
+.login-card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 400px;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border: 1px solid #eef2f7;
+    text-align: center;
+}
+
+.login-card h2 { margin-bottom: 30px; font-size: 1.5rem; font-weight: 700; color: #1e293b; }
+.input-group { margin-bottom: 20px; text-align: left; }
+.input-group label { display: block; margin-bottom: 8px; font-weight: 600; color: #495057; }
+
+.form-control { 
+    width: 100%; padding: 14px; border: 1px solid #ced4da; border-radius: 8px; font-size: 1rem; 
+}
+.form-control:focus { border-color: #3152d6; outline: none; box-shadow: 0 0 0 0.2rem rgba(49, 82, 214, 0.25); }
+
+.btn-login { 
+    width: 100%; padding: 14px; background-color: #3152d6; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; margin-top: 10px;
+}
+
+/* --- 5. Component Styles --- */
+.card { background: #ffffff; padding: 25px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; background: #ffffff; }
+th { padding: 15px; text-align: left; background: #34495e; color: #ffffff; }
+td { padding: 15px; border-bottom: 1px solid #e9ecef; }
